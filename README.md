@@ -20,6 +20,38 @@
 | Isaac Lab | `release/3.0.0-beta2` |
 | openpi / pi0.5 | 独立 Python 3.11 环境，`pi05_libero` checkpoint（约 11.6 GiB） |
 
+## 一键安装
+
+```bash
+git clone https://github.com/satopikac/isaacpi.git
+cd isaacpi
+./scripts/setup_env.sh
+```
+
+脚本把整套环境装到 `~/sim_stack`（`--root` 可改），**全程无需 sudo**——Python 版本由 `uv` 管理。它依次做：
+
+1. 前置体检：系统、GPU 数量与显存、磁盘 ≥45G、`uv`/`git`（缺 `uv` 会问你是否安装）
+2. 建 `isaac_sim_env`（Python 3.12），装 `isaacsim==6.0.1.0`，自动接受 EULA
+3. clone Isaac Lab 切到 `release/3.0.0-beta2`，跑 `./isaaclab.sh --install`
+4. 打上 Franka USD 资产路径补丁
+5. clone openpi，建 `openpi_env`（Python 3.11），`uv sync`
+6. 用 `--no-deps` 把 `openpi-client` 装进 Isaac Sim 环境（避免 numpy 版本冲突）
+7. 部署桥接脚本到 `~/sim_stack/bridge/`
+
+**文档里记录的每个坑都固化进了脚本**：版本锁定 + `--index-strategy unsafe-best-match` + `--prerelease allow` 三件套、`OMNI_KIT_ACCEPT_EULA=YES`、Isaac Lab 分支必须匹配 Isaac Sim 版本、`--no-deps` 保护 numpy、资产路径 `Legacy/` 修正。
+
+脚本**幂等**，中断后重跑只补做缺失部分：
+
+| 命令 | 作用 |
+| --- | --- |
+| `./scripts/setup_env.sh --verify` | 只体检不安装，逐项列出 16 项检查结果 |
+| `./scripts/setup_env.sh --only isaac` | 只装 Isaac Sim + Isaac Lab |
+| `./scripts/setup_env.sh --only openpi` | 只装 openpi |
+| `./scripts/setup_env.sh --root /data/sim_stack` | 换安装位置 |
+| `./scripts/setup_env.sh -y` | 不交互提问 |
+
+> 脚本不下载 pi0.5 的 11.6 GB checkpoint——它在首次启动 policy server 时自动拉取。
+
 ## 文档导读
 
 建议按下面的顺序读。**没有基础就从 1 开始，只想赶紧跑起来就直接看 2。**
@@ -40,6 +72,7 @@
 
 ```
 .
+├── scripts/setup_env.sh            # 环境自动配置 / 体检脚本
 ├── bridge/isaac_lab_pi05_eval.py   # Isaac Lab ↔ pi0.5 桥接脚本（本仓库核心代码）
 ├── patches/                        # 需要打在 Isaac Lab 上游代码上的补丁
 ├── videos/                         # 端到端运行产出的演示视频
@@ -54,9 +87,9 @@
 
 ## 关于依赖
 
-本仓库**只包含自己写的文档、脚本和产物**，不含 Isaac Lab、openpi 这两个上游仓库的代码，也不含 Python 虚拟环境（两个 env 加起来近 40 GB）。请按 [QUICKSTART.md §1](./QUICKSTART.md) 自行 clone 和安装。
+本仓库**只包含自己写的文档、脚本和产物**，不含 Isaac Lab、openpi 这两个上游仓库的代码，也不含 Python 虚拟环境（两个 env 加起来近 40 GB）。用上面的 [一键安装](#一键安装) 脚本会自动 clone 并安装它们；想手动装见 [QUICKSTART.md §1](./QUICKSTART.md)。
 
-Isaac Lab beta 分支有一处云资产路径未同步的 bug，需要打补丁：
+Isaac Lab beta 分支有一处云资产路径未同步的 bug（`setup_env.sh` 会自动打，手动装才需要）：
 
 ```bash
 git -C /path/to/IsaacLab apply /path/to/this/repo/patches/isaaclab-franka-legacy-usd-path.patch
