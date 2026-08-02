@@ -1,0 +1,32 @@
+# Python 虚拟环境（isaac_sim_env ~31G, openpi_env ~7.7G）
+isaac_sim_env/
+openpi_env/
+venv/
+.venv/
+*.egg-info/
+__pycache__/
+*.py[cod]
+
+# 上游仓库，请自行 clone，勿提交
+IsaacLab/
+openpi/
+
+# 模型权重与大文件
+*.usd
+*.usda
+*.pt
+*.pth
+*.safetensors
+checkpoints/
+
+# 训练产物
+outputs/
+runs/
+logs/**/events.out.tfevents.*
+wandb/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+*.swp

@@ -1,0 +1,249 @@
+The '--headless' CLI argument is deprecated. Omit '--viz' for default headless. If config visualizers are enabled and you want to force headless, use '--viz none'.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784537203.916232   71616 descriptor_database.cc:633] File already exists in database: grpc/health/v1/health.proto
+W0000 00:00:1784537203.916261   71616 message.cc:301] Protobuf GeneratedMessageFactory: File is already registered: grpc/health/v1/health.proto
+Loading user config located at: '/home/qingyu/sim_stack/isaac_sim_env/lib/python3.12/site-packages/isaacsim/kit/data/Kit/IsaacLab/3.0/user.config.json'
+2026-07-20T08:46:43Z [Info] [carb] Logging to file: /home/qingyu/sim_stack/isaac_sim_env/lib/python3.12/site-packages/isaacsim/kit/logs/Kit/IsaacLab/3.0/kit_20260720_164643.log
+2026-07-20T08:46:43Z [3ms] [Warning] [omni.ext.plugin] [ext: isaaclab_visualizers] Extensions config 'extension.toml' doesn't exist '/home/qingyu/sim_stack/IsaacLab/source/isaaclab_visualizers' or '/home/qingyu/sim_stack/IsaacLab/source/isaaclab_visualizers/config'
+2026-07-20T08:46:44Z [284ms] [Warning] [omni.platforminfo.plugin] failed to open the default display.  Can't verify X Server version.
+2026-07-20T08:46:44Z [284ms] [Warning] [omni.rtx] CUDA_VISIBLE_DEVICES environment variable is set.
+2026-07-20T08:46:44Z [284ms] [Warning] [omni.rtx] Note CUDA device enumeration and Omniverse device enumeration are different.
+2026-07-20T08:46:44Z [284ms] [Warning] [omni.rtx] Setting CUDA_VISIBLE_DEVICES can lead to undesired behavior or crashes.
+2026-07-20T08:46:44Z [812ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-20T08:46:44Z [812ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-20T08:46:44Z [882ms] [Warning] [omni.rtx] Skipping NVIDIA graphics device because the matching CUDA device could not be found: NVIDIA GeForce RTX 5080
+2026-07-20T08:46:44Z [882ms] [Warning] [omni.rtx] Please restart your system if CUDA is known to work in your system, check if the NVIDIA driver is installed and working correctly, or check the MIG instance configuration if MIG is enabled.
+2026-07-20T08:46:44Z [882ms] [Warning] [omni.rtx] Skipping NVIDIA graphics device because the matching CUDA device could not be found: NVIDIA GeForce RTX 5080
+2026-07-20T08:46:44Z [882ms] [Warning] [omni.rtx] Please restart your system if CUDA is known to work in your system, check if the NVIDIA driver is installed and working correctly, or check the MIG instance configuration if MIG is enabled.
+
+|---------------------------------------------------------------------------------------------|
+| Driver Version: 580.126.20    | Graphics API: Vulkan
+|=============================================================================================|
+| GPU | Name                             | Active | LDA | GPU Memory | Vendor-ID | LUID       |
+|     |                                  |        |     |            | Device-ID | UUID       |
+|     |                                  |        |     |            | Bus-ID    |            |
+|---------------------------------------------------------------------------------------------|
+| 0   | NVIDIA GeForce RTX 5080          | Yes: 0 |     | 16303   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2c02      | 18c2731d.. |
+|     |                                  |        |     |            | 1         |            |
+|---------------------------------------------------------------------------------------------|
+| 1   | NVIDIA GeForce RTX 5080          |        |     | 16303   MB | 10de      | 0          |
+|     |                                  |        |     |            | 2c02      | 6167b1ea.. |
+|     |                                  |        |     |            | 7         |            |
+|=============================================================================================|
+| OS: 22.04.5 LTS (Jammy Jellyfish) ubuntu, Version: 22.04.5, Kernel: 6.8.0-110-generic
+| Processor: Intel(R) Core(TM) i9-14900KF
+| Bare Metal Cores: 24 | Bare Metal Logical Cores: 48
+| Available Cores:  32 
+|---------------------------------------------------------------------------------------------|
+| Total Memory (MB): 128596 | Free Memory: 112117
+| Total Page/Swap (MB): 2047 | Free Page/Swap: 2044
+|---------------------------------------------------------------------------------------------|
+2026-07-20T08:46:44Z [1,100ms] [Warning] [omni.rtx] CPU performance profile is set to powersave. This profile sets the CPU to the lowest frequency reducing performance.
+[ISAACLAB] AppLauncher initialization complete
+[INFO]: Parsing configuration from: isaaclab_tasks.manager_based.locomotion.velocity.config.go2.flat_env_cfg:UnitreeGo2FlatEnvCfg_PLAY
+[INFO]: Parsing configuration from: isaaclab_tasks.manager_based.locomotion.velocity.config.go2.agents.rsl_rl_ppo_cfg:UnitreeGo2FlatPPORunnerCfg
+[INFO] Loading experiment from directory: /home/qingyu/sim_stack/IsaacLab/logs/rsl_rl/unitree_go2_flat
+[INFO]: Base environment:
+	Environment device    : cuda:0
+	Environment seed      : 42
+	Physics step-size     : 0.005
+	Rendering step-size   : 0.02
+	Environment step-size : 0.02
+[INFO]: Registered backend 'physx' for factory Articulation.
+[INFO]: Registered backend 'physx' for factory FrameView.
+[INFO]: Physics scene prim path: /physicsScene
+[INFO]: Time taken for scene creation Last: 1.269778 s, Mean: 1.269778 s, Std: 0.000000 s, N: 1
+[INFO]: Scene manager:  <class InteractiveScene>
+	Number of environments: 16
+	Environment spacing   : 2.5
+	Source prim name      : /World/envs/env_0
+	Global prim paths     : ['/World/ground']
+	Replicate physics     : True
+[INFO]: Simulation parameters for joints in /World/envs/env_.*/Robot:
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                  Simulation Joint Information (Prim path: /World/envs/env_.*/Robot)                                                  |
++-------+----------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+| Index | Name           | Stiffness | Damping | Armature | Static Friction | Dynamic Friction | Viscous Friction | Position Limits  | Velocity Limits | Effort Limits |
++-------+----------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+|   0   | FL_hip_joint   |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.047, 1.047]  |      30.100     |    1.0e+09    |
+|   1   | FR_hip_joint   |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.047, 1.047]  |      30.100     |    1.0e+09    |
+|   2   | RL_hip_joint   |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.047, 1.047]  |      30.100     |    1.0e+09    |
+|   3   | RR_hip_joint   |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.047, 1.047]  |      30.100     |    1.0e+09    |
+|   4   | FL_thigh_joint |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.571, 3.491]  |      30.100     |    1.0e+09    |
+|   5   | FR_thigh_joint |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-1.571, 3.491]  |      30.100     |    1.0e+09    |
+|   6   | RL_thigh_joint |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-0.524, 4.538]  |      30.100     |    1.0e+09    |
+|   7   | RR_thigh_joint |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-0.524, 4.538]  |      30.100     |    1.0e+09    |
+|   8   | FL_calf_joint  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.723, -0.838] |      15.700     |    1.0e+09    |
+|   9   | FR_calf_joint  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.723, -0.838] |      15.700     |    1.0e+09    |
+|   10  | RL_calf_joint  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.723, -0.838] |      15.700     |    1.0e+09    |
+|   11  | RR_calf_joint  |   0.000   |  0.000  |  0.000   |      0.000      |      0.000       |      0.000       | [-2.723, -0.838] |      15.700     |    1.0e+09    |
++-------+----------------+-----------+---------+----------+-----------------+------------------+------------------+------------------+-----------------+---------------+
+[INFO]: Time taken for simulation start Last: 1.185825 s, Mean: 1.185825 s, Std: 0.000000 s, N: 1
+[INFO] Command Manager:  <CommandManager> contains 1 active terms.
++------------------------------------------------+
+|              Active Command Terms              |
++-------+---------------+------------------------+
+| Index | Name          |          Type          |
++-------+---------------+------------------------+
+|   0   | base_velocity | UniformVelocityCommand |
++-------+---------------+------------------------+
+
+[INFO] Event Manager:  <EventManager> contains 2 active terms.
++--------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++----------+---------------------------+
+|  Index   | Name                      |
++----------+---------------------------+
+|    0     | physics_material          |
+|    1     | add_base_mass             |
+|    2     | base_com                  |
++----------+---------------------------+
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++---------+---------------------------+
+|  Index  | Name                      |
++---------+---------------------------+
+|    0    | reset_base                |
+|    1    | reset_robot_joints        |
++---------+---------------------------+
+
+[INFO] Recorder Manager:  <RecorderManager> contains 0 active terms.
++---------------------+
+| Active Recorder Terms |
++-----------+---------+
+|   Index   | Name    |
++-----------+---------+
++-----------+---------+
+
+[INFO]: Resolved joint names for the action term JointPositionAction: ['FL_hip_joint', 'FR_hip_joint', 'RL_hip_joint', 'RR_hip_joint', 'FL_thigh_joint', 'FR_thigh_joint', 'RL_thigh_joint', 'RR_thigh_joint', 'FL_calf_joint', 'FR_calf_joint', 'RL_calf_joint', 'RR_calf_joint'] [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]]
+/home/qingyu/sim_stack/isaac_sim_env/lib/python3.12/site-packages/rsl_rl/utils/utils.py:220: UserWarning: The observation configuration dictionary 'obs_groups' is empty and thus likely not configured. Consider configuring the 'obs_groups' dictionary explicitly
+  warnings.warn(
+/home/qingyu/sim_stack/isaac_sim_env/lib/python3.12/site-packages/rsl_rl/utils/utils.py:251: UserWarning: The observation configuration dictionary 'obs_groups' does not contain the 'actor' key. As an observation group with the name 'policy' was found, this is assumed to be the appropriate observation. Consider adding the 'actor' key to the 'obs_groups' dictionary for clarity. This behavior will be removed in a future version.
+  warnings.warn(
+/home/qingyu/sim_stack/isaac_sim_env/lib/python3.12/site-packages/rsl_rl/utils/utils.py:251: UserWarning: The observation configuration dictionary 'obs_groups' does not contain the 'critic' key. As an observation group with the name 'policy' was found, this is assumed to be the appropriate observation. Consider adding the 'critic' key to the 'obs_groups' dictionary for clarity. This behavior will be removed in a future version.
+  warnings.warn(
+/home/qingyu/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/copyreg.py:99: FutureWarning: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+  return cls.__new__(cls, *args)
+[INFO] Action Manager:  <ActionManager> contains 1 active terms.
++------------------------------------+
+|  Active Action Terms (shape: 12)   |
++--------+-------------+-------------+
+| Index  | Name        |   Dimension |
++--------+-------------+-------------+
+|   0    | joint_pos   |          12 |
++--------+-------------+-------------+
+
+[INFO] Observation Manager: <ObservationManager> contains 1 groups.
++---------------------------------------------------------+
+| Active Observation Terms in Group: 'policy' (shape: (48,)) |
++-----------+---------------------------------+-----------+
+|   Index   | Name                            |   Shape   |
++-----------+---------------------------------+-----------+
+|     0     | base_lin_vel                    |    (3,)   |
+|     1     | base_ang_vel                    |    (3,)   |
+|     2     | projected_gravity               |    (3,)   |
+|     3     | velocity_commands               |    (3,)   |
+|     4     | joint_pos                       |   (12,)   |
+|     5     | joint_vel                       |   (12,)   |
+|     6     | actions                         |   (12,)   |
++-----------+---------------------------------+-----------+
+
+[INFO] Termination Manager:  <TerminationManager> contains 2 active terms.
++---------------------------------+
+|     Active Termination Terms    |
++-------+--------------+----------+
+| Index | Name         | Time Out |
++-------+--------------+----------+
+|   0   | time_out     |   True   |
+|   1   | base_contact |  False   |
++-------+--------------+----------+
+
+[INFO] Reward Manager:  <RewardManager> contains 10 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+----------------------+----------+
+| Index | Name                 |   Weight |
++-------+----------------------+----------+
+|   0   | track_lin_vel_xy_exp |      1.5 |
+|   1   | track_ang_vel_z_exp  |     0.75 |
+|   2   | lin_vel_z_l2         |     -2.0 |
+|   3   | ang_vel_xy_l2        |    -0.05 |
+|   4   | dof_torques_l2       |  -0.0002 |
+|   5   | dof_acc_l2           | -2.5e-07 |
+|   6   | action_rate_l2       |    -0.01 |
+|   7   | feet_air_time        |     0.25 |
+|   8   | flat_orientation_l2  |     -2.5 |
+|   9   | dof_pos_limits       |      0.0 |
++-------+----------------------+----------+
+
+[INFO] Curriculum Manager:  <CurriculumManager> contains 0 active terms.
++----------------------+
+| Active Curriculum Terms |
++-----------+----------+
+|   Index   | Name     |
++-----------+----------+
++-----------+----------+
+
+[INFO]: Completed setting up the environment...
+[INFO] Recording videos during play.
+        video_folder: /home/qingyu/sim_stack/IsaacLab/logs/rsl_rl/go2_walk_demo/2026-07-20_16-34-11/videos/play
+        step_trigger: lambda step: step == 0
+        video_length: 300
+        disable_logger: True
+[INFO]: Loading model checkpoint from: /home/qingyu/sim_stack/IsaacLab/logs/rsl_rl/go2_walk_demo/2026-07-20_16-34-11/model_499.pt
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ['policy']
+	 critic :  ['policy']
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): Identity()
+  (distribution): GaussianDistribution()
+  (mlp): MLP(
+    (0): Linear(in_features=48, out_features=128, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=128, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=12, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): Identity()
+  (mlp): MLP(
+    (0): Linear(in_features=48, out_features=128, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=128, out_features=128, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=128, out_features=128, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=128, out_features=1, bias=True)
+  )
+)
+[INFO]: RTX streaming completed in 0.02 s.
+[INFO]: RTX streaming completed in 0.12 s.
+[INFO]: SimulationContext cleared
+2026-07-20T08:46:44Z [1,107ms] [Warning] [omni.rtx] IOMMU is enabled.
+2026-07-20T08:46:45Z [1,549ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-20T08:46:45Z [1,549ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-20T08:46:45Z [1,594ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-20T08:46:45Z [1,594ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-20T08:46:45Z [1,595ms] [Warning] [carb.windowing-glfw.plugin] GLFW initialization failed.
+2026-07-20T08:46:45Z [1,595ms] [Warning] [carb] Failed to startup plugin carb.windowing-glfw.plugin (interfaces: [carb::windowing::IGLContext v1.0],[carb::windowing::IWindowing v1.5]) (impl: carb.windowing-glfw.plugin)
+2026-07-20T08:46:45Z [1,705ms] [Warning] [omni.log] Source: omni.hydra was already registered.
+2026-07-20T08:46:45Z [2,022ms] [Warning] [pxr.Semantics] pxr.Semantics is deprecated - please use Semantics instead
+2026-07-20T08:46:45Z [2,076ms] [Warning] [omni.replicator.core.scripts.extension] No material configuration file, adding configuration to material settings directly.
+2026-07-20T08:46:46Z [2,910ms] [Warning] [rtx.hydra] RenderDelegate : Warning /rtx/hydra/readTransformsFromFabricInRenderDelegate and geometry streaming are enabled together but this can cause issues with dynamic objects not streaming correctly due to problems in the transform update.
+2026-07-20T08:46:47Z [4,023ms] [Warning] [isaaclab_physx.physics.physx_manager] TGS solver with enable_external_forces_every_iteration=False may cause noisy velocities.
+2026-07-20T08:46:48Z [5,096ms] [Warning] [isaaclab.terrains.terrain_importer] Visual material specified for ground plane but no diffuse color found. Using default color: (0.0, 0.0, 0.0)
+2026-07-20T08:46:49Z [5,997ms] [Warning] [omni.usd] Encountered USD Warnings but USD Diagnostics are currently muted. To view USD Warnings, please set the '/persistent/app/usd/muteUsdDiagnostics' setting to false in Preferences page.
+2026-07-20T08:46:50Z [6,742ms] [Warning] [omni.physx.fabric.plugin] FabricManager::initializePointInstancer mismatched prototypes on point instancer: /Visuals/Command/velocity_goal.
+2026-07-20T08:46:50Z [6,742ms] [Warning] [omni.physx.fabric.plugin] FabricManager::initializePointInstancer mismatched prototypes on point instancer: /Visuals/Command/velocity_current.
+2026-07-20T08:46:51Z [7,799ms] [Warning] [omni.fabric.plugin] Unsupported type encountered during VtValue extraction
+2026-07-20T08:46:51Z [7,799ms] [Warning] [omni.fabric.plugin] Attempting to set an invalid data source to array attribute
+
+2026-07-20T08:46:51Z [7,867ms] [Warning] [omni.kit.material.library.material_extensions] Could not initialize context menu integration: No module named 'omni.kit.context_menu'
+2026-07-20T08:46:51Z [8,037ms] [Warning] [omni.syntheticdata.plugin] OgnSdPostRenderVarToHost : rendervar copy from texture directly to host buffer is counter-performant. Please use copy from texture to device buffer first.
+[INFO] Using Python: "/home/qingyu/sim_stack/isaac_sim_env/bin/python"

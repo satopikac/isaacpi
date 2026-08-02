@@ -1,0 +1,13 @@
+diff --git a/source/isaaclab_assets/isaaclab_assets/robots/franka.py b/source/isaaclab_assets/isaaclab_assets/robots/franka.py
+index f03d21760f..bae0580735 100644
+--- a/source/isaaclab_assets/isaaclab_assets/robots/franka.py
++++ b/source/isaaclab_assets/isaaclab_assets/robots/franka.py
+@@ -25,7 +25,7 @@ from isaaclab.utils.assets import ISAAC_NUCLEUS_DIR, ISAACLAB_NUCLEUS_DIR
+ 
+ FRANKA_PANDA_CFG = ArticulationCfg(
+     spawn=sim_utils.UsdFileCfg(
+-        usd_path=f"{ISAACLAB_NUCLEUS_DIR}/Robots/FrankaEmika/panda_instanceable.usd",
++        usd_path=f"{ISAACLAB_NUCLEUS_DIR}/Robots/FrankaEmika/Legacy/panda_instanceable.usd",
+         activate_contact_sensors=False,
+         rigid_props=sim_utils.RigidBodyPropertiesCfg(
+             disable_gravity=False,
